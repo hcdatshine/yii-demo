@@ -8,10 +8,10 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Contact';
+$this->title = 'Category';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
+<div class="">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -20,22 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'category-form']); ?>
 
-                <?= $form->field($contact, 'name')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($category, 'name')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($contact, 'email') ?>
-
-                <?= $form->field($contact, 'subject') ?>
-
-                <?= $form->field($contact, 'body')->textarea(['rows' => 6]) ?>
-
-                <?= $form->field($contact, 'verifyCode')->widget(Captcha::className(), [
+                <?= $form->field($category, 'verifyCode')->widget(Captcha::className(), [
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                 ]) ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'category-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
